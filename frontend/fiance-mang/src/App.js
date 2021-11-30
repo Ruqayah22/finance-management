@@ -1,14 +1,8 @@
 import "./App.css";
-// import { Header } from "./components/Header";
-import Footer from "./components/Footer";
-import SearchAppBar from "./components/Header";
+import Bottombar from "./components/Bottombar";
+import SearchAppBar from "./components/Navbar";
 import backgroundImage from "./images/background.png";
-
-// const styles = {
-//   paperContainer: {
-//     backgroundImage: `url(${backgroundImage})`,
-//   },
-// };
+import PersistentDrawerLeft from "./components/SidebarNavMenu";
 
 const App = () => {
   return (
@@ -21,12 +15,33 @@ const App = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* style={styles.paperContainer} */}
-      {/* <Header /> */}
       <SearchAppBar />
-      <Footer />
+
+      <PersistentDrawerLeft />
+      <main
+        style={{
+          minHeight: "63%",
+        }}
+      ></main>
+      <Bottombar />
     </div>
   );
 };
 
 export default App;
+
+////////////////////////////////////////////////////////////////
+// import { Header } from "./components/Header";
+
+// const styles = {
+//   paperContainer: {
+//     backgroundImage: `url(${backgroundImage})`,
+//   },
+// };
+
+// {
+//   /* style={styles.paperContainer} */
+// }
+// {
+//   /* <Header /> */
+// }

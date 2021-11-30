@@ -1,53 +1,14 @@
 import React from "react";
-// import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
-// import Badge from "@mui/material/Badge";
-// import MenuItem from "@mui/material/MenuItem";
-// import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-// import AccountCircle from "@mui/icons-material/AccountCircle";
-// import MailIcon from "@mui/icons-material/Mail";
-// import NotificationsIcon from "@mui/icons-material/Notifications";
-// import MoreIcon from "@mui/icons-material/MoreVert";
-// import Avatar from "@mui/material/Avatar";
+import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
-// import { deepOrange, green } from "@mui/material/colors";
-// import AssignmentIcon from "@mui/icons-material/Assignment";
-// import logo from "../images/logo.ico";
-// import N from "../images/N.ico";
-
-// const Header = () => {
-//   return <div>Header</div>;
-// };
-
-// for logo image :
-// function VariantAvatars() {
-//   return (
-//     <Stack direction="row" spacing={2}>
-//       <Avatar
-//         // src="../images/logo.ico"
-//         sx={{ width: 35, height: 46 }}
-//         variant="square"
-//       >
-//         <img src={logo} width="56" height="46"></img>
-//       </Avatar>
-//       <Avatar
-//         // src="../images/N.ico"
-//         sx={{ width: 35, height: 46 }}
-//         variant="square"
-//       >
-//         <img src={N} width="56" height="46"></img>
-//       </Avatar>
-//     </Stack>
-//   );
-// }
+import logo from "../images/logo.ico";
 
 // for bar
 const Search = styled("div")(({ theme }) => ({
@@ -89,6 +50,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+// for logo image :
+function VariantAvatars() {
+  return (
+    <Stack direction="row" spacing={2}>
+      <Avatar sx={{ width: 35, height: 46 }} variant="square">
+        <img src={logo} width="56" height="46"></img>
+      </Avatar>
+    </Stack>
+  );
+}
 
 function SearchAppBar() {
   return (
@@ -100,16 +71,7 @@ function SearchAppBar() {
         }}
       >
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          {/* <VariantAvatars /> */}
+          <VariantAvatars />
           <Typography
             variant="h6"
             noWrap
@@ -132,3 +94,49 @@ function SearchAppBar() {
 }
 // export { Header };
 export default SearchAppBar;
+
+////////////////////////////////////////////////////////////////
+// import * as React from "react";
+// import Stack from "@mui/material/Stack";
+// import MenuIcon from "@mui/icons-material/Menu";
+// import IconButton from "@mui/material/IconButton";
+// import N from "../images/N.ico";
+
+// const Header = () => {
+//   return <div>Header</div>;
+// };
+
+// for logo image :
+// function VariantAvatars() {
+//   return (
+//     <Stack direction="row" spacing={2}>
+//       <Avatar
+//         // src="../images/logo.ico"
+//         sx={{ width: 35, height: 46 }}
+//         variant="square"
+//       >
+//         <img src={logo} width="56" height="46"></img>
+//       </Avatar>
+//       <Avatar
+//         // src="../images/N.ico"
+//         sx={{ width: 35, height: 46 }}
+//         variant="square"
+//       >
+//         <img src={N} width="56" height="46"></img>
+//       </Avatar>
+//     </Stack>
+//   );
+// }
+
+// {
+//   /* <IconButton
+//             size="large"
+//             edge="start"
+//             color="inherit"
+//             aria-label="open drawer"
+//             sx={{ mr: 2 }}
+//             aria-label="open drawer"
+//           >
+//             <MenuIcon />
+//           </IconButton> */
+// }
