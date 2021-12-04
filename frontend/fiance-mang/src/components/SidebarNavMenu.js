@@ -2,28 +2,21 @@ import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import CssBaseline from "@mui/material/CssBaseline";
-import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import Button from "@mui/material/Button";
 
 const drawerWidth = 200;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
   ({ theme, open }) => ({
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(0),
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -38,23 +31,6 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
     }),
   })
 );
-
-// const AppBar = styled(MuiAppBar, {
-//   shouldForwardProp: (prop) => prop !== "open",
-// })(({ theme, open }) => ({
-//   transition: theme.transitions.create(["margin", "width"], {
-//     easing: theme.transitions.easing.sharp,
-//     duration: theme.transitions.duration.leavingScreen,
-//   }),
-//   ...(open && {
-//     width: `calc(100% - ${drawerWidth}px)`,
-//     marginLeft: `${drawerWidth}px`,
-//     transition: theme.transitions.create(["margin", "width"], {
-//       easing: theme.transitions.easing.easeOut,
-//       duration: theme.transitions.duration.enteringScreen,
-//     }),
-//   }),
-// }));
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -77,19 +53,13 @@ export default function PersistentDrawerLeft() {
     setOpen(false);
   };
 
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
   return (
     <Box sx={{ display: "flex" }}>
-      {/* <CssBaseline /> */}
-      {/* <AppBar
-        position="fixed"
-        open={open}
-        style={{
-          backgroundColor: "none",
-          // width: "70%",
-          // marginLeft: "15%",
-          // borderRadius: "10px",
-        }}
-      > */}
       <Toolbar>
         <IconButton
           color="inherit"
@@ -97,15 +67,10 @@ export default function PersistentDrawerLeft() {
           onClick={handleDrawerOpen}
           edge="start"
           sx={{ mr: 2, ...(open && { display: "none" }) }}
-          style={{
-            top: "-33%",
-            left: "-20%",
-          }}
         >
           <MenuIcon />
         </IconButton>
       </Toolbar>
-      {/* </AppBar> */}
       <Drawer
         sx={{
           width: drawerWidth,
@@ -126,7 +91,7 @@ export default function PersistentDrawerLeft() {
       >
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "ltr" ? (
+            {theme.direction === "rtl" ? (
               <ChevronLeftIcon />
             ) : (
               <ChevronRightIcon />
@@ -135,25 +100,99 @@ export default function PersistentDrawerLeft() {
         </DrawerHeader>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              {/* <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon> */}
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <Button
+            onClick={handleCloseNavMenu}
+            sx={{
+              my: 2,
+              color: "#fff",
+              width: "100%",
+              display: "block",
+              margin: "0 20px ",
+              fontSize: "20px",
+              fontWeight: "bold",
+              "&:hover": { background: "#f7f7f7", color: "#40454b" },
+            }}
+          >
+            العمال
+          </Button>
+          <Button
+            onClick={handleCloseNavMenu}
+            sx={{
+              my: 2,
+              color: "#fff",
+              width: "100%",
+              display: "block",
+              margin: "0 20px ",
+              fontSize: "20px",
+              fontWeight: "bold",
+              "&:hover": { background: "#f7f7f7", color: "#40454b" },
+            }}
+          >
+            الزبائن
+          </Button>
+          <Button
+            onClick={handleCloseNavMenu}
+            sx={{
+              my: 2,
+              color: "#fff",
+              width: "100%",
+              display: "block",
+              margin: "0 20px ",
+              fontSize: "20px",
+              fontWeight: "bold",
+              "&:hover": { background: "#f7f7f7", color: "#40454b" },
+            }}
+          >
+            مصاريف المدير
+          </Button>
+          <Button
+            onClick={handleCloseNavMenu}
+            sx={{
+              my: 2,
+              color: "#fff",
+              width: "100%",
+              display: "block",
+              margin: "0 20px ",
+              fontSize: "20px",
+              fontWeight: "bold",
+              "&:hover": { background: "#f7f7f7", color: "#40454b" },
+            }}
+          >
+            مصاريف عامة
+          </Button>
         </List>
         <Divider />
         <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              {/* <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon> */}
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <Button
+            onClick={handleCloseNavMenu}
+            sx={{
+              my: 2,
+              color: "#fff",
+              width: "100%",
+              display: "block",
+              margin: "0 20px ",
+              fontSize: "20px",
+              fontWeight: "bold",
+              "&:hover": { background: "#f7f7f7", color: "#40454b" },
+            }}
+          >
+            الجرد
+          </Button>
+          <Button
+            onClick={handleCloseNavMenu}
+            sx={{
+              my: 2,
+              color: "#fff",
+              width: "100%",
+              display: "block",
+              margin: "0 20px ",
+              fontSize: "20px",
+              fontWeight: "bold",
+              "&:hover": { background: "#f7f7f7", color: "#40454b" },
+            }}
+          >
+            الملاحظات
+          </Button>
         </List>
       </Drawer>
       <Main open={open}>
