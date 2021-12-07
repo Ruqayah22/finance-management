@@ -5,8 +5,10 @@
 /.pnp
 .pnp.js
 node_modules/
-fiance-mang/node_modules
+frontend/fiance-mang/node_modules
 .vscode
+backend/node_modules
+
 
 # testing
 /coverage
