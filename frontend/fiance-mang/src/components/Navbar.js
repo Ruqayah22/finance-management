@@ -15,9 +15,11 @@ import DateTimePicker from "@mui/lab/DateTimePicker";
 function VariantAvatars() {
   return (
     <Stack direction="row" spacing={2}>
-      <Avatar sx={{ width: 35, height: 46 }} variant="square">
-        <img src={logo} width="56" height="46"></img>
-      </Avatar>
+      <Avatar
+        src={logo}
+        style={{ width: 35, height: 46, display: "flex" }}
+        variant="square"
+      ></Avatar>
     </Stack>
   );
 }

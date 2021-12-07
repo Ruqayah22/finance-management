@@ -10,7 +10,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Button from "@mui/material/Button";
-
+import Employees from "../pages/Employees/Employees";
+import { Link } from "react-router-dom";
 const drawerWidth = 200;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
@@ -100,99 +101,116 @@ export default function PersistentDrawerLeft() {
         </DrawerHeader>
         <Divider />
         <List>
-          <Button
-            onClick={handleCloseNavMenu}
-            sx={{
-              my: 2,
-              color: "#fff",
-              width: "100%",
-              display: "block",
-              margin: "0 20px ",
-              fontSize: "20px",
-              fontWeight: "bold",
-              "&:hover": { background: "#f7f7f7", color: "#40454b" },
-            }}
+          <Link
+            to={"/employees"}
+            style={{ textDecoration: "none", color: "#fff" }}
           >
-            العمال
-          </Button>
-          <Button
-            onClick={handleCloseNavMenu}
-            sx={{
-              my: 2,
-              color: "#fff",
-              width: "100%",
-              display: "block",
-              margin: "0 20px ",
-              fontSize: "20px",
-              fontWeight: "bold",
-              "&:hover": { background: "#f7f7f7", color: "#40454b" },
-            }}
+            <Button
+              sx={{
+                my: 2,
+                color: "#fff",
+                width: "100%",
+                display: "block",
+                margin: "0 20px ",
+                fontSize: "20px",
+                fontWeight: "bold",
+                "&:hover": { background: "#f7f7f7", color: "#40454b" },
+              }}
+            >
+              العمال
+            </Button>
+          </Link>
+          <Link
+            to={"/customers"}
+            style={{ textDecoration: "none", color: "#fff" }}
           >
-            الزبائن
-          </Button>
-          <Button
-            onClick={handleCloseNavMenu}
-            sx={{
-              my: 2,
-              color: "#fff",
-              width: "100%",
-              display: "block",
-              margin: "0 20px ",
-              fontSize: "20px",
-              fontWeight: "bold",
-              "&:hover": { background: "#f7f7f7", color: "#40454b" },
-            }}
-          >
-            مصاريف المدير
-          </Button>
-          <Button
-            onClick={handleCloseNavMenu}
-            sx={{
-              my: 2,
-              color: "#fff",
-              width: "100%",
-              display: "block",
-              margin: "0 20px ",
-              fontSize: "20px",
-              fontWeight: "bold",
-              "&:hover": { background: "#f7f7f7", color: "#40454b" },
-            }}
-          >
-            مصاريف عامة
-          </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{
+                my: 2,
+                color: "#fff",
+                width: "100%",
+                display: "block",
+                margin: "0 20px ",
+                fontSize: "20px",
+                fontWeight: "bold",
+                "&:hover": { background: "#f7f7f7", color: "#40454b" },
+              }}
+            >
+              الزبائن
+            </Button>
+          </Link>
+          <Link to={""} style={{ textDecoration: "none", color: "#fff" }}>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{
+                my: 2,
+                color: "#fff",
+                width: "100%",
+                display: "block",
+                margin: "0 20px ",
+                fontSize: "20px",
+                fontWeight: "bold",
+                "&:hover": { background: "#f7f7f7", color: "#40454b" },
+              }}
+            >
+              مصاريف المدير
+            </Button>
+          </Link>
+          <Link to={""} style={{ textDecoration: "none", color: "#fff" }}>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{
+                my: 2,
+                color: "#fff",
+                width: "100%",
+                display: "block",
+                margin: "0 20px ",
+                fontSize: "20px",
+                fontWeight: "bold",
+                "&:hover": { background: "#f7f7f7", color: "#40454b" },
+              }}
+            >
+              مصاريف عامة
+            </Button>
+          </Link>
         </List>
         <Divider />
         <List>
-          <Button
-            onClick={handleCloseNavMenu}
-            sx={{
-              my: 2,
-              color: "#fff",
-              width: "100%",
-              display: "block",
-              margin: "0 20px ",
-              fontSize: "20px",
-              fontWeight: "bold",
-              "&:hover": { background: "#f7f7f7", color: "#40454b" },
-            }}
-          >
-            الجرد
-          </Button>
-          <Button
-            onClick={handleCloseNavMenu}
-            sx={{
-              my: 2,
-              color: "#fff",
-              width: "100%",
-              display: "block",
-              margin: "0 20px ",
-              fontSize: "20px",
-              fontWeight: "bold",
-              "&:hover": { background: "#f7f7f7", color: "#40454b" },
-            }}
-          >
-            الملاحظات
-          </Button>
+          <Link to={""} style={{ textDecoration: "none", color: "#fff" }}>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{
+                my: 2,
+                color: "#fff",
+                width: "100%",
+                display: "block",
+                margin: "0 20px ",
+                fontSize: "20px",
+                fontWeight: "bold",
+                "&:hover": { background: "#f7f7f7", color: "#40454b" },
+              }}
+            >
+              الجرد
+            </Button>
+          </Link>
+          <Link to={""} style={{ textDecoration: "none", color: "#fff" }}>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{
+                my: 2,
+                color: "#fff",
+                width: "100%",
+                display: "block",
+                margin: "0 20px ",
+                fontSize: "20px",
+                fontWeight: "bold",
+                "&:hover": { background: "#f7f7f7", color: "#40454b" },
+              }}
+            >
+              الملاحظات
+            </Button>
+          </Link>
         </List>
       </Drawer>
       <Main open={open}>
