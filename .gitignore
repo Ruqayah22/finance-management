@@ -6,8 +6,10 @@
 .pnp.js
 node_modules/
 frontend/fiance-mang/node_modules
-.vscode
+./.vscode
 backend/node_modules
+frontend/.vscode
+
 
 
 # testing
