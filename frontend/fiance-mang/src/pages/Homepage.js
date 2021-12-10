@@ -2,7 +2,6 @@ import React from "react";
 import Bottombar from "../components/Bottombar";
 import SearchAppBar from "../components/Navbar";
 import backgroundImage from "../images/background.png";
-import PersistentDrawerLeft from "../components/SidebarNavMenu";
 import SocialFollow from "../components/SocialFollow";
 import Textbody from "../components/Textbody";
 
@@ -19,7 +18,6 @@ function Homepage() {
       }}
     >
       <SearchAppBar />
-      {/* <PersistentDrawerLeft /> */}
       <main
         style={{
           minHeight: "25%",

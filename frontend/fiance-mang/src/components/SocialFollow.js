@@ -42,7 +42,7 @@ function SocialFollow() {
       </Grid>
       <Grid item xs={8}>
         <IconButton
-          href="https://radwan_alnawfali90@yahoo.com"
+          href="mailto:radwan_alnawfali90@yahoo.com"
           value="email"
           target="_blank"
           sx={{
@@ -55,7 +55,7 @@ function SocialFollow() {
 
       <Grid item xs={8}>
         <IconButton
-          href="+9647507229130"
+          href="tel:+9647507229130"
           value="phone"
           target="_blank"
           sx={{

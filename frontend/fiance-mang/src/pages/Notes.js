@@ -1,45 +1,25 @@
 import React, { useState } from "react";
 import Paper from "@mui/material/Paper";
 import { Avatar, Typography } from "@material-ui/core";
-import logo from "../../images/logo.ico";
+import logo from "../images/logo.ico";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import MaterialTable from "material-table";
 
-const empList = [
+const notesList = [
   {
     id: 1,
-    Name: "Snow",
-    dateOfBirth: "1/1/1990",
-    address: "oo",
-    phoneNumber: "0770",
-    salary: "200",
-    debt: "10",
-    date: "3/12/2021",
+    Notes: "شراء بليت حديد",
+    Date: "3/12/2021",
   },
 ];
-
-export default function Employees() {
-  const [data, setData] = useState(empList);
+function Notes() {
+  const [data, setData] = useState(notesList);
 
   const columns = [
     { title: "ID", field: "id", editable: false },
-    { title: "الاسم", field: "Name", width: 130 },
-    {
-      field: "dateOfBirth",
-      title: "المواليد",
-      width: 130,
-      type: "number",
-    },
-    {
-      field: "address",
-      title: "العنوان",
-      width: 90,
-    },
-    { field: "phoneNumber", title: "الهاتف", width: 130, type: "number" },
-    { field: "salary", title: "الراتب", width: 130, type: "number" },
-    { field: "debt", title: "الديون", width: 130, type: "number" },
-    { field: "date", title: "التاريخ", width: 130, type: "number" },
+    { title: "الملاحظة", field: "Notes", width: 130 },
+    { title: "التاريخ", field: "Date", width: 130, type: "number" },
   ];
 
   return (
@@ -52,10 +32,19 @@ export default function Employees() {
         height: 100,
         flexGrow: 1,
       }}
+      style={{
+        backgroundColor: "#40454b",
+        height: "100%",
+        margin: "0",
+        padding: "0",
+      }}
     >
-      <Grid container spacing={4}>
+      <Grid container spacing={4} style={{ margin: "0 5px 0 5px" }}>
         <Grid item xs={16}>
-          <Paper sx={{ maxWidth: "100%", my: 1, mx: "auto", p: 2 }}>
+          <Paper
+            sx={{ maxWidth: "100%", my: 1, mx: "auto", p: 2 }}
+            style={{ margin: "0 20px 0px 20px" }}
+          >
             <Grid container wrap="nowrap" spacing={2}>
               <Grid item>
                 <Avatar
@@ -74,10 +63,9 @@ export default function Employees() {
                 <Typography
                   noWrap
                   variant="h5"
-                  // component="div"
                   style={{ flex: "2", marginLeft: "40px", marginTop: "30px" }}
                 >
-                  Add Employee
+                  Notes
                 </Typography>
               </Grid>
             </Grid>
@@ -99,7 +87,7 @@ export default function Employees() {
                 backgroundColor: "#fff",
                 width: "100%",
               }}
-              title="Employee Data"
+              title="Notes Data"
               data={data}
               columns={columns}
               editable={{
@@ -147,3 +135,5 @@ export default function Employees() {
     </Box>
   );
 }
+
+export default Notes;

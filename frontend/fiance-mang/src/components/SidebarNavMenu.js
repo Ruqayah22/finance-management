@@ -10,7 +10,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Button from "@mui/material/Button";
-import Employees from "../pages/Employees/Employees";
 import { Link } from "react-router-dom";
 const drawerWidth = 200;
 
@@ -140,7 +139,10 @@ export default function PersistentDrawerLeft() {
               الزبائن
             </Button>
           </Link>
-          <Link to={""} style={{ textDecoration: "none", color: "#fff" }}>
+          <Link
+            to={"/managerExpenses"}
+            style={{ textDecoration: "none", color: "#fff" }}
+          >
             <Button
               onClick={handleCloseNavMenu}
               sx={{
@@ -157,7 +159,10 @@ export default function PersistentDrawerLeft() {
               مصاريف المدير
             </Button>
           </Link>
-          <Link to={""} style={{ textDecoration: "none", color: "#fff" }}>
+          <Link
+            to={"/generalExpenses"}
+            style={{ textDecoration: "none", color: "#fff" }}
+          >
             <Button
               onClick={handleCloseNavMenu}
               sx={{
@@ -194,7 +199,7 @@ export default function PersistentDrawerLeft() {
               الجرد
             </Button>
           </Link>
-          <Link to={""} style={{ textDecoration: "none", color: "#fff" }}>
+          <Link to={"/notes"} style={{ textDecoration: "none", color: "#fff" }}>
             <Button
               onClick={handleCloseNavMenu}
               sx={{
