@@ -19,7 +19,7 @@ function VariantAvatars() {
         src={logo}
         style={{ width: 35, height: 46, display: "flex" }}
         variant="square"
-      ></Avatar>
+      />
     </Stack>
   );
 }

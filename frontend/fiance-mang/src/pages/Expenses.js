@@ -5,47 +5,50 @@ import logo from "../images/logo.ico";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import MaterialTable from "material-table";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
-const empList = [
+const expensesList = [
   {
     id: 1,
-    Name: "Snow",
-    dateOfBirth: "1/1/1990",
-    address: "oo",
-    phoneNumber: "0770",
-    salary: "200",
-    debt: "10",
+    purchases: "300",
+    salaries: "500",
+    ManagerExpenses: "600",
+    GeneralExpenses: "400",
+    total: "18000",
     date: "3/12/2021",
   },
 ];
 
-export default function Employees() {
-  const [data, setData] = useState(empList);
+export default function Expenses() {
+  const [data, setData] = useState(expensesList);
 
-  // const getEmployees = () => {
-  //   fetch(postEmployees)
-  //     .then((resp) => resp.json())
-  //     .then((resp) => setData(resp));
-  // };
   const columns = [
     { title: "ID", field: "id", editable: false },
-    { title: "الاسم", field: "Name", width: 130 },
+    { field: "purchases", title: "المشتريات", width: 130, type: "number" },
     {
-      field: "dateOfBirth",
-      title: "المواليد",
+      field: "salaries",
+      title: "الرواتب",
       width: 130,
       type: "number",
     },
     {
-      field: "address",
-      title: "العنوان",
-      width: 90,
+      field: "ManagerExpenses",
+      title: "مصاريف المدير",
+      width: 130,
+      type: "number",
     },
-    { field: "phoneNumber", title: "الهاتف", width: 130, type: "number" },
-    { field: "salary", title: "الراتب", width: 130, type: "number" },
-    { field: "debt", title: "الديون", width: 130, type: "number" },
+    {
+      field: "GeneralExpenses",
+      title: "مصاريف عامة",
+      width: 130,
+      type: "number",
+    },
+    {
+      field: "total",
+      title: "المجموع",
+      width: 130,
+      type: "number",
+    },
     { field: "date", title: "التاريخ", width: 130, type: "number" },
   ];
 
@@ -95,7 +98,7 @@ export default function Employees() {
                   // component="div"
                   style={{ flex: "2", marginLeft: "40px", marginTop: "30px" }}
                 >
-                  Add Employee
+                  Add Expenses
                 </Typography>
               </Grid>
             </Grid>
@@ -117,7 +120,7 @@ export default function Employees() {
                 backgroundColor: "#fff",
                 width: "100%",
               }}
-              title="Employee Data"
+              title="Expenses Data"
               data={data}
               columns={columns}
               editable={{
@@ -156,8 +159,6 @@ export default function Employees() {
               options={{
                 actionsColumnIndex: -1,
                 addRowPosition: "first",
-                detailPanelColumnAlignment: "right",
-                // exportButton: true,
               }}
             />
           </Paper>

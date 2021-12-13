@@ -5,47 +5,31 @@ import logo from "../images/logo.ico";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import MaterialTable from "material-table";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
-const empList = [
+const importsList = [
   {
     id: 1,
-    Name: "Snow",
-    dateOfBirth: "1/1/1990",
-    address: "oo",
-    phoneNumber: "0770",
-    salary: "200",
-    debt: "10",
+    sales: "120",
+    debts: "500",
+    total: "620",
     date: "3/12/2021",
   },
 ];
 
-export default function Employees() {
-  const [data, setData] = useState(empList);
+export default function Imports() {
+  const [data, setData] = useState(importsList);
 
-  // const getEmployees = () => {
-  //   fetch(postEmployees)
-  //     .then((resp) => resp.json())
-  //     .then((resp) => setData(resp));
-  // };
   const columns = [
     { title: "ID", field: "id", editable: false },
-    { title: "الاسم", field: "Name", width: 130 },
+    { field: "sales", title: "المبيعات", width: 130, type: "number" },
+    { field: "debts", title: "الديون", width: 130, type: "number" },
     {
-      field: "dateOfBirth",
-      title: "المواليد",
+      field: "total",
+      title: "المجموع",
       width: 130,
       type: "number",
     },
-    {
-      field: "address",
-      title: "العنوان",
-      width: 90,
-    },
-    { field: "phoneNumber", title: "الهاتف", width: 130, type: "number" },
-    { field: "salary", title: "الراتب", width: 130, type: "number" },
-    { field: "debt", title: "الديون", width: 130, type: "number" },
     { field: "date", title: "التاريخ", width: 130, type: "number" },
   ];
 
@@ -95,7 +79,7 @@ export default function Employees() {
                   // component="div"
                   style={{ flex: "2", marginLeft: "40px", marginTop: "30px" }}
                 >
-                  Add Employee
+                  Add Imports
                 </Typography>
               </Grid>
             </Grid>
@@ -117,7 +101,7 @@ export default function Employees() {
                 backgroundColor: "#fff",
                 width: "100%",
               }}
-              title="Employee Data"
+              title="Imports Data"
               data={data}
               columns={columns}
               editable={{
@@ -156,8 +140,6 @@ export default function Employees() {
               options={{
                 actionsColumnIndex: -1,
                 addRowPosition: "first",
-                detailPanelColumnAlignment: "right",
-                // exportButton: true,
               }}
             />
           </Paper>

@@ -5,6 +5,7 @@ import logo from "../images/logo.ico";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import MaterialTable from "material-table";
+import { Link } from "react-router-dom";
 
 const mangExList = [
   {
@@ -50,17 +51,19 @@ function ManagerExpenses() {
           >
             <Grid container wrap="nowrap" spacing={2}>
               <Grid item>
-                <Avatar
-                  src={logo}
-                  variant="square"
-                  style={{
-                    width: 65,
-                    height: 76,
-                    left: 50,
-                    top: 10,
-                    margin: "10px",
-                  }}
-                />
+                <Link to={"/"}>
+                  <Avatar
+                    src={logo}
+                    variant="square"
+                    style={{
+                      width: 65,
+                      height: 76,
+                      left: 50,
+                      top: 10,
+                      margin: "10px",
+                    }}
+                  />
+                </Link>
               </Grid>
               <Grid item xs>
                 <Typography

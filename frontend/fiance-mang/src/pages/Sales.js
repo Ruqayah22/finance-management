@@ -5,47 +5,40 @@ import logo from "../images/logo.ico";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import MaterialTable from "material-table";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
-const empList = [
+const salesList = [
   {
     id: 1,
     Name: "Snow",
-    dateOfBirth: "1/1/1990",
-    address: "oo",
-    phoneNumber: "0770",
-    salary: "200",
-    debt: "10",
+    product: "iron",
+    ironPrice: "100",
+    extraPrice: "50",
+    total: "150",
     date: "3/12/2021",
   },
 ];
 
-export default function Employees() {
-  const [data, setData] = useState(empList);
+export default function Purchases() {
+  const [data, setData] = useState(salesList);
 
-  // const getEmployees = () => {
-  //   fetch(postEmployees)
-  //     .then((resp) => resp.json())
-  //     .then((resp) => setData(resp));
-  // };
   const columns = [
     { title: "ID", field: "id", editable: false },
     { title: "الاسم", field: "Name", width: 130 },
+    { field: "product", title: "المنتج", width: 130 },
+    { field: "ironPrice", title: " السعر الحديد", width: 130, type: "number" },
     {
-      field: "dateOfBirth",
-      title: "المواليد",
+      field: "extraPrice",
+      title: " السعر الاضافي",
       width: 130,
       type: "number",
     },
     {
-      field: "address",
-      title: "العنوان",
-      width: 90,
+      field: "total",
+      title: "المجموع",
+      width: 130,
+      type: "number",
     },
-    { field: "phoneNumber", title: "الهاتف", width: 130, type: "number" },
-    { field: "salary", title: "الراتب", width: 130, type: "number" },
-    { field: "debt", title: "الديون", width: 130, type: "number" },
     { field: "date", title: "التاريخ", width: 130, type: "number" },
   ];
 
@@ -95,7 +88,7 @@ export default function Employees() {
                   // component="div"
                   style={{ flex: "2", marginLeft: "40px", marginTop: "30px" }}
                 >
-                  Add Employee
+                  Add Sales
                 </Typography>
               </Grid>
             </Grid>
@@ -117,7 +110,7 @@ export default function Employees() {
                 backgroundColor: "#fff",
                 width: "100%",
               }}
-              title="Employee Data"
+              title="Sales Data"
               data={data}
               columns={columns}
               editable={{
@@ -156,8 +149,6 @@ export default function Employees() {
               options={{
                 actionsColumnIndex: -1,
                 addRowPosition: "first",
-                detailPanelColumnAlignment: "right",
-                // exportButton: true,
               }}
             />
           </Paper>
